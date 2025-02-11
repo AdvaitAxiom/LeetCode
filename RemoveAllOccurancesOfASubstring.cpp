@@ -1,5 +1,7 @@
 https://leetcode.com/problems/remove-all-occurrences-of-a-substring/description/?envType=daily-question&envId=2025-02-11
 
+
+//ANS-1
 class Solution {
 public:
     string removeOccurrences(string s, string part) {
@@ -9,5 +11,22 @@ public:
             s.erase(pos,part.length());
         }
         return(s);
+    }
+};
+
+//ANS-2
+class Solution {
+public:
+    string removeOccurrences(string s, string part) {
+        string ans;
+        int m = part.length();
+
+        for(char ch : s){
+            ans += ch;
+            if(ans.length() >= part.length() && ans.substr(ans.length()-m, m)==part){
+                ans.erase(ans.length()-m);  //erase from last index
+            }
+        }
+        return ans;
     }
 };
