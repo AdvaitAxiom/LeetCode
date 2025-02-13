@@ -26,7 +26,7 @@ public:
         vector<int>& values = entry.second;
         if (values.size() > 1) {
             // Get the two largest numbers in the group
-            sort(values.rbegin(), values.rend());  // Sort in descending order
+            sort(values.rbegin() , values.rend());  // Sort in descending order
             maxResult = max(maxResult, values[0] + values[1]);
         }
     }
